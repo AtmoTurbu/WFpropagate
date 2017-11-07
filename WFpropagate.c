@@ -24,7 +24,7 @@
 
 #include <fitsio.h> 
 
-#include "CLIcore.h"
+#include "CommandLineInterface/CLIcore.h"
 #include "COREMOD_memory/COREMOD_memory.h"
 #include "COREMOD_arith/COREMOD_arith.h"
 #include "COREMOD_iofits/COREMOD_iofits.h"
