@@ -24,7 +24,7 @@
 
 #include <fitsio.h> 
 
-#include "CLIcore.h"
+#include "CommandLineInterface/CLIcore.h"
 #include "COREMOD_memory/COREMOD_memory.h"
 #include "COREMOD_arith/COREMOD_arith.h"
 #include "COREMOD_iofits/COREMOD_iofits.h"
@@ -60,7 +60,7 @@ int_fast8_t Fresnel_propagate_wavefront_cli()
 void __attribute__ ((constructor)) libinit_WFpropagate()
 {
 	init_WFpropagate();
-	printf(" ...... Loading module %s\n", __FILE__);
+//	printf(" ...... Loading module %s\n", __FILE__);
 }
 
 
