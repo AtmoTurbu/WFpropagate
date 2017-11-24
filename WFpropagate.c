@@ -69,7 +69,8 @@ void __attribute__ ((constructor)) libinit_WFpropagate()
 int_fast8_t init_WFpropagate()
 {
   strcpy(data.module[data.NBmodule].name, __FILE__);
-  strcpy(data.module[data.NBmodule].info, "wfprop  - light propagation");
+  strcpy(data.module[data.NBmodule].package, "wfprop");
+  strcpy(data.module[data.NBmodule].info, "Light propagation");
   data.NBmodule++;
   
   strcpy(data.cmd[data.NBcmd].key,"fresnelpw");
