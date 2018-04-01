@@ -35,7 +35,6 @@
 #include "WFpropagate/WFpropagate.h"
 
 
-extern DATA data;
 
 #define SBUFFERSIZE 2000
 
