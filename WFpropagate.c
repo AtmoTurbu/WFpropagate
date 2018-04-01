@@ -190,7 +190,15 @@ int Fresnel_propagate_wavefront(const char *in, const char *out, double PUPIL_SC
 
 
 /* takes better care of aliasing problems */
-int Init_Fresnel_propagate_wavefront(const char *Cim, long size, double PUPIL_SCALE, double z, double lambda, double FPMASKRAD, int Precision)
+int Init_Fresnel_propagate_wavefront(
+		const char *Cim, 
+		long size, 
+		double PUPIL_SCALE, 
+		double z, 
+		double lambda, 
+		double FPMASKRAD, 
+		int Precision
+		)
 {
     /* all units are in m */
     double coeff;
