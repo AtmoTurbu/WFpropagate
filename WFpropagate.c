@@ -39,6 +39,9 @@
 #define SBUFFERSIZE 2000
 
 
+static int INITSTATUS_WFpropagate = 0;
+
+
 
 
 int_fast8_t Fresnel_propagate_wavefront_cli()
@@ -58,8 +61,12 @@ int_fast8_t Fresnel_propagate_wavefront_cli()
 
 void __attribute__ ((constructor)) libinit_WFpropagate()
 {
-	init_WFpropagate();
-//	printf(" ...... Loading module %s\n", __FILE__);
+	if ( INITSTATUS_WFpropagate == 0 )
+	{
+		init_WFpropagate();
+		RegisterModule(__FILE__, "wfprop", "Light propagation");
+		INITSTATUS_WFpropagate = 1; 
+	}
 }
 
 
@@ -67,10 +74,6 @@ void __attribute__ ((constructor)) libinit_WFpropagate()
 
 int_fast8_t init_WFpropagate()
 {
-  strcpy(data.module[data.NBmodule].name, __FILE__);
-  strcpy(data.module[data.NBmodule].package, "wfprop");
-  strcpy(data.module[data.NBmodule].info, "Light propagation");
-  data.NBmodule++;
   
   strcpy(data.cmd[data.NBcmd].key,"fresnelpw");
   strcpy(data.cmd[data.NBcmd].module,__FILE__);
